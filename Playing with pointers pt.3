@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int sum(int *ptr, int size){
+int i = 0, sum = 0;
+for(;i<size;){
+    sum += *(ptr + i);
+    i++;
+    }
+    return sum;
+}
+
+int main(){
+    int arr[3] = {1,2,4};
+    int result = sum(arr, 3);
+    printf("Sum= %d, ", result);
+}
+

@@ -1,0 +1,11 @@
+ #include<stdio.h>
+
+int main(){
+    int a[6] ={0,1,2,3,4,5};
+    //int i = 0;
+    int *ptr = &a[3];
+    printf("value: %d\n", *(ptr));
+    printf("value: %d\n", *(ptr+1));
+    printf("value: %d\n", *(ptr-1));
+
+}

@@ -1,2 +1,3 @@
 # DataStructure
-This repo will track my DS learnings.
+This repo is about pointers & memory in C language.
+Status- WIP (Work in progress)

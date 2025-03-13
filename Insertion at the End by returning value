@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *link;
+};
+
+struct Node* addAtEnd(struct Node *head, int data) {
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    if (temp == NULL) {
+        return NULL;
+    }
+    temp->data = data;
+    temp->link = NULL;
+
+    if (head == NULL) {
+        return temp;
+    }
+
+    struct Node *ptr = head;
+    while (ptr->link != NULL) {
+        ptr = ptr->link;
+    }
+    ptr->link = temp;
+    return head;
+}
+
+int main() {
+    struct Node *head = (struct Node *)malloc(sizeof(struct Node));
+    if (head == NULL) {
+        return 1;
+    }
+    head->data = 5;
+    head->link = NULL;
+
+    head = addAtEnd(head, 10);
+    head = addAtEnd(head, 15);
+    head = addAtEnd(head, 20);
+
+    struct Node *ptr = head;
+
+    while (ptr != NULL) {
+        printf("%d -> ", ptr->data);
+        ptr = ptr->link;
+    }
+    printf("NULL\n");
+
+    ptr = head;
+    while (ptr != NULL) {
+        struct Node *temp = ptr;
+        ptr = ptr->link;
+        free(temp);
+    }
+
+    return 0;
+}

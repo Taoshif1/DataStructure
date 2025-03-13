@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Linked list node
+struct Node{
+    int data;
+    struct Node *link;
+};
+
+// Function to create a new node
+struct Node* createNode(int newData){
+    struct Node* newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode -> data = newData;
+    newNode -> link = NULL;
+    return newNode;
+
+}
+
+// Function to traverse and print the singly linked list
+void traversal(struct Node *head){
+    
+    // Loop that runs until head is NULL
+    while(head!= NULL){
+            
+        // Printing data of current node
+        printf("%d -> ", head -> data);
+    
+        // Moving to the next node
+        head = head -> link;
+    }
+    printf("NULL\n");
+}
+
+int main(){
+    struct Node* head = createNode(10);
+    head -> link = createNode(20);
+    head -> link -> link = createNode(30);
+    head -> link -> link -> link = createNode(40);
+
+    traversal(head);
+}

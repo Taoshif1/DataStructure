@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct DNode {
+    int data;
+    struct DNode *next;
+    struct DNode *prev;
+};
+
+struct DNode *createDLinkedList(int arr[], int size);
+void printDOriginal(struct DNode *head);
+void printDReverse(struct DNode *head);
+
+int main(){
+    int a[] = {23, 48, 57, 4, 12};
+    struct DNode *dhead = NULL;
+    dhead = createDLinkedList(a, 5);
+
+    // Print original order for doubly linked list
+    printf("Original order: ");
+    printDOriginal(dhead);
+    printf("NULL\n");
+
+    // Print reverse order for doubly linked list
+    printf("Reverse order: ");
+    printDReverse(dhead);
+    printf("NULL\n");
+
+    return 0;
+}
+
+void printDOriginal(struct DNode *head) {
+    while (head != NULL) {
+        printf("%d <-> ", head->data);
+        head = head->next;
+    }
+}
+
+void printDReverse(struct DNode *head) {
+    if (head == NULL) {
+        return;
+    }
+    // Traverse to the last node first
+    struct DNode *temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+
+    // Now print the list in reverse order
+    while (temp != NULL) {
+        printf("%d <-> ", temp->data);
+        temp = temp->prev;
+    }
+}
+
+struct DNode *createDLinkedList(int arr[], int size) {
+    struct DNode *head = NULL, *temp = NULL, *current = NULL;
+    int i;
+    for(i = 0; i < size; i++) {
+        temp = (struct DNode *)malloc(sizeof(struct DNode));
+        temp->data = arr[i];
+        temp->next = NULL;
+        temp->prev = NULL;
+        if (head == NULL) {
+            head = temp;
+            current = temp;
+        } else {
+            current->next = temp;
+            temp->prev = current;
+            current = current->next;
+        }
+    }
+    return head;
+}

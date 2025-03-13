@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node{
+    int data;
+    struct node *link;
+};
+
+int main(){
+
+//First Node
+struct Node* head = (struct Node *)malloc(sizeof(struct Node));
+head -> data = 5;
+head -> link = NULL;
+printf("First Node\n");
+printf("Value: %d\n", head->data);
+printf("Address: %d\n", head->link);
+printf("Address: %d\n", &head);
+
+//Second Node
+struct Node* curr = (struct Node *)malloc(sizeof(struct Node));
+curr -> data = 10;
+curr -> link = NULL;
+printf("\n\nSecond node\n");
+printf("Value: %d\n", curr -> data);
+printf("Address: %d\n", curr -> link);
+head -> link = curr;
+printf("Address: %d\n", &curr);
+
+//Third Node
+curr = (struct Node *)malloc(sizeof(struct Node));
+curr -> data = 15;
+curr -> link = NULL;
+printf("\n\nThird node\n");
+printf("Value: %d\n", curr -> data);
+printf("Address: %d\n", curr -> link);
+head -> link = curr -> link;
+printf("Address: %d\n", &curr);
+
+    return  0;
+}

@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+struct Node *createLinkedList(int arr[], int size);
+void printOriginal(struct Node *head);
+void printReverse(struct Node *head);
+
+int main(){
+    int a[] = {23, 48, 57, 4, 12};
+    struct Node *head = NULL;
+    head = createLinkedList(a, 5);
+
+    // Print original order
+    printf("Original order: ");
+    printOriginal(head);
+    printf("NULL\n");
+
+    // Print reverse order
+    printf("Reverse order: ");
+    printReverse(head);
+    printf("NULL\n");
+
+    return 0;
+}
+
+void printOriginal(struct Node *head) {
+    while (head != NULL) {
+        printf("%d -> ", head->data);
+        head = head->next;
+    }
+}
+
+void printReverse(struct Node *head) {
+    if (head == NULL) {
+        return;
+    }
+    printReverse(head->next);
+    printf("%d <- ", head->data);
+}
+
+struct Node *createLinkedList(int arr[], int size){
+    struct Node *head = NULL, *temp = NULL, *current = NULL;
+    int i;
+    for(i = 0; i < size; i++) {
+        temp = (struct Node *)malloc(sizeof(struct Node));
+        temp->data = arr[i];
+        temp->next = NULL;
+        if (head == NULL) {
+            head = temp;
+            current = temp;
+        } else {
+            current->next = temp;
+            current = current->next;
+        }
+    }
+    return head;
+}

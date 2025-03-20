@@ -17,8 +17,8 @@ algorithmic solutions.
 
 ### ➢ Linear Data Structure                                                                     
   ■ Static data structure                                                                                        
-  ■ Dynamic data structure                                                                                         
-### ➢ Non-linear Data Structure
+  ■ Dynamic data structure
+  ### ➢ Non-linear Data Structure
 
 ### ❖ Memory Layout                                                      
   ➢ Variable vs Array vs Structure                                                                                                    

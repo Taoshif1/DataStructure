@@ -30,7 +30,7 @@ algorithmic solutions.
   ➢ Applications of Array                                               
   ➢ Real-Life Applications of Array                                                                                                                
 
-### ❖ Linked List                                                                                                            
+ ### ❖ Linked List                                                                                                            
   ➢ Characteristics of Linked List                                                                          
   ➢ Applications of Linked List                                                                         
   ➢ Real-Life Applications of Linked List                                                                                                             
@@ -69,9 +69,9 @@ algorithmic solutions.
   ➢ Real-Life Applications of Tree                                                    
   
 ### ❖ Information Retrieval: Graph (Graph: BFS, DFS)                                                                    
-    ➢ Characteristics of BFS, DFS                            
-    ➢ Applications of BFS, DFS                                       
-    ➢ Real-Life Applications of BFS, DFS                            
+  ➢ Characteristics of BFS, DFS                            
+  ➢ Applications of BFS, DFS                                       
+  ➢ Real-Life Applications of BFS, DFS                            
                             
 ### ❖ Tree Sort                                                
   ➢ Characteristics of Tree Sort                          
@@ -88,7 +88,7 @@ algorithmic solutions.
   ➢ Applications of Quick Sort                                                                  
   ➢ Real-Life Applications Quick Sort                                                                                       
 
-###❖ Topological Sort                                                       
+### ❖ Topological Sort                                                       
   ➢ Characteristics of Topological Sort                                                              
   ➢ Applications of Topological Sort                                                                   
   ➢ Real-Life Applications Topological Sort                                                                            

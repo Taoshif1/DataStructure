@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Structure for a node in the BST
+struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+};
+
+// Function to create a new node
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
+// Function to insert a new node into the BST
+struct Node* insert(struct Node* root, int data) {
+    if (root == NULL) {
+        return createNode(data);
+    }
+
+    if (data < root->data) {
+        root->left = insert(root->left, data);
+    } else {
+        root->right = insert(root->right, data);
+    }
+    return root;
+}
+
+// Function for In-order traversal (Left-Root-Right)
+void inOrder(struct Node* root) {
+    if (root != NULL) {
+        inOrder(root->left);
+        printf("%d ", root->data);
+        inOrder(root->right);
+    }
+}
+
+// Function for Pre-order traversal (Root-Left-Right)
+void preOrder(struct Node* root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+}
+
+// Function for Post-order traversal (Left-Right-Root)
+void postOrder(struct Node* root) {
+    if (root != NULL) {
+        postOrder(root->left);
+        postOrder(root->right);
+        printf("%d ", root->data);
+    }
+}
+
+int main() {
+    int keys[] = {7, 9, 13, 3, 20, 67, 89, 6, 45, 34, 12, 4, 11, 12, 7, 44};
+    int n = sizeof(keys) / sizeof(keys[0]);
+
+    struct Node* root = NULL;
+
+    // Find the first 12 and set it as the root
+    for (int i = 0; i < n; i++) {
+        if (keys[i] == 12) {
+            root = insert(root, keys[i]);
+            // Insert the remaining elements
+            for (int j = 0; j < n; j++) {
+                if (i != j) {
+                    insert(root, keys[j]);
+                }
+            }
+            break; // Stop after setting the first 12 as root
+        }
+    }
+
+    printf("In-order traversal: ");
+    inOrder(root);
+    printf("\n");
+
+    printf("Pre-order traversal: ");
+    preOrder(root);
+    printf("\n");
+
+    printf("Post-order traversal: ");
+    postOrder(root);
+    printf("\n");
+
+    return 0;
+}

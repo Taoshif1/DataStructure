@@ -1,0 +1,127 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 10
+
+int queue_arr[MAX];
+int front = -1;
+int rear = -1;
+
+int isFull() {
+    if ((rear + 1) % MAX == front) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int isEmpty() {
+    if (front == -1) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+void enqueue(int data) {
+    if (isFull()) {
+        printf("Queue Overflow!!\n");
+        return;
+    }
+    if (isEmpty()) {
+        front = 0;
+        rear = 0;
+    } else {
+        rear = (rear + 1) % MAX;
+    }
+    queue_arr[rear] = data;
+}
+
+int dequeue() {
+    int value;
+    if (isEmpty()) {
+        printf("Queue Underflow!!\n");
+        exit(1);
+    }
+    value = queue_arr[front];
+    if (front == rear) {
+        front = -1;
+        rear = -1;
+    } else {
+        front = (front + 1) % MAX;
+    }
+    return value;
+}
+
+int peek() {
+    if (isEmpty()) {
+        printf("Queue Underflow!!\n");
+        exit(1);
+    }
+    return queue_arr[front];
+}
+
+void print() {
+    int i;
+    if (isEmpty()) {
+        printf("Queue underflow\n");
+        return;
+    }
+    printf("Queue items: ");
+    if(front <= rear){
+        for(i = front; i<= rear; i++){
+            printf("%d ", queue_arr[i]);
+        }
+    }else{
+        for(i = front; i < MAX; i++){
+            printf("%d ", queue_arr[i]);
+        }
+        for(i = 0; i <= rear; i++){
+            printf("%d ", queue_arr[i]);
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    int choice, data;
+    while (1) {
+        printf("\n");
+        printf("1. Enqueue\n");
+        printf("2. Dequeue\n");
+        printf("3. Print the front element\n");
+        printf("4. Print all the elements of the queue\n");
+        printf("5. Quit\n");
+        printf("\nPlease enter your choice: \n");
+        scanf("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            printf("Enter the element to be enqueued: ");
+            scanf("%d", &data);
+            enqueue(data);
+            break;
+
+        case 2:
+            data = dequeue();
+            printf("Deleted element is %d\n", data);
+            break;
+
+        case 3:
+            printf("Frontmost element of the queue is %d\n", peek());
+            break;
+
+        case 4:
+            print();
+            break;
+
+        case 5:
+            return 0;
+            break;
+
+        default:
+            printf("Wrong Choice!!\nPlease choose from 1-5\n");
+        }
+    }
+    return 0;
+}

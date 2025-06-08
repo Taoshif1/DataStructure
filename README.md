@@ -1,94 +1,88 @@
-# DataStructure
-This repo is about pointers & memory in C language.
-Status- WIP (Work in progress)
+# Data Structure in C (CSE 207) 🧠💻
+[![Status: Learning Completed (for now!)](https://img.shields.io/badge/Status-Learning%20Completed%20(for%20now!)-brightgreen.svg?style=for-the-badge)](https://github.com/Taoshif1/LearningTS)
 
-## The objectives of this course are to-                                                                
-1. introduce an Overview of elementary Data Organization                                                    
-2. Introduction of the basic data structures for storing and retrieving ordered or
-unordered data using arrays, linked lists, binary trees, heaps, graphs, graph Search
-and Traversal Techniques and hash tables.                                            
-3. develop the idea of asymptotic analysis using Big-O techniques to compare different                                                   
-algorithmic solutions.                                              
+Welcome to the **DataStructure** repository — a full-fledged implementation and exploration of core **Data Structures in C**, following the syllabus of **CSE 207: Data Structures**. This repo covers everything from pointers to linked lists, stacks, queues and trees — not just to learn but to master memory-level control and logic building.
 
-## Table Of Contents                                                                                                             
-❖ Introduction of Data Structure, the introduction of primitive data types.                                                                         
-❖ How does Data Structure vary from Data Type?                                                                 
-❖ Classification of Data Structure                                                                    
+---
 
-### ➢ Linear Data Structure                                                                     
-  ■ Static data structure                                                                                        
-  ■ Dynamic data structure
-  ### ➢ Non-linear Data Structure
+## 📘 Course Context
 
-### ❖ Memory Layout                                                      
-  ➢ Variable vs Array vs Structure                                                                                                    
-  ➢ Physical and Logical Memory Layout of Variable, Array, and Structure                                                                              
-  ➢ Static (Fixed) vs Dynamic Memory Allocation                                                                                
+> **Course:** CSE 207 — Data Structures  
+> **Language Used:** C (Pointers, Dynamic Memory, Structs)  
+> **University:** East West University, Dhaka  
+> **Semester:** 4th Semester
 
-### ❖ Array (Sorted and Unsorted)                                                                                                                    
-  ➢ Characteristics of an Array                                                                                                                      
-  ➢ Applications of Array                                               
-  ➢ Real-Life Applications of Array                                                                                                                
+---
 
- ### ❖ Linked List                                                                                                            
-  ➢ Characteristics of Linked List                                                                          
-  ➢ Applications of Linked List                                                                         
-  ➢ Real-Life Applications of Linked List                                                                                                             
+## 📂 Implemented Problems & Topics
+The repository is organized by topic for clarity and revision, reflecting the hands-on problems solved by myself:
 
-### ❖ Memory Layout                                                                       
-  ➢ Linked List                                                   
+### 🔗 Linked List
+- Create three nodes
+- Create a Linked List from an Array
+- Traverse a Linked List
+- Insertion at the End by returning value
+- Search an element in a Linked List
+- SLL (Original & Reverse)
+- DLL (Original & Reverse)
+- Traversal of SLL (Iterative Approach)
 
-### ❖ Stack                                                                         
-  ➢ Characteristics of a Stack                                                                                  
-  ➢ Applications of Stack                                                             
-  ➢ Real-Life Applications of Stack                                                                                           
+### 📍Pointers & Memory
+- Checking address of elements in array
+- Dereferencing a pointer
+- Traverse array using dereference operator
+- Summation using dereference operator
+- Address of nodes
+- Playing with pointers pt.1 / pt.2 / pt.3
 
-### ❖ Queue
-  ➢ Characteristics of a Queue                                                                                              
-  ➢ Applications of Queue                                                                            
-  ➢ Real-Life Applications of Queue                                                                             
+### 📚 Stack & Queue (Dynamic)
+- Dynamic Stack
+- Dynamic Queue
 
-### ❖ Hashmap and Hashtable                                                                            
-  ➢ Characteristics of Hashmap and Table                                                               
-  ➢ Applications of Hashmap and table                                                                         
-  ➢ Real-Life Applications of Hashmap and table                                                            
+### 🌲 Tree
+- BST (Binary Search Tree) Implementation
+- Count number of Nodes
 
-### ❖ N-ary Tree (e.g. Binary Tree)                                                           
-  ➢ Characteristics of Tree                                                                                                                          
-  ➢ Applications of Tree                                                                        
-  ➢ Real-Life Applications of Tree                                                                   
-  
-### ❖ Graph: Introduction to Graph, representation of Graphs                                                                              
-  ➢ Characteristics of Graph                                                                                             
-  ➢ Applications of Graph                                                                                                  
-  ➢ Real-Life Applications of Graph                                                                                                          
-  
-### ❖ Information Retrieval: Tree (Tree: BFS, DFS)                                                                 
-  ➢ Characteristics of a Tree                                                        
-  ➢ Applications of Tree                                                    
-  ➢ Real-Life Applications of Tree                                                    
-  
-### ❖ Information Retrieval: Graph (Graph: BFS, DFS)                                                                    
-  ➢ Characteristics of BFS, DFS                            
-  ➢ Applications of BFS, DFS                                       
-  ➢ Real-Life Applications of BFS, DFS                            
-                            
-### ❖ Tree Sort                                                
-  ➢ Characteristics of Tree Sort                          
-  ➢ Applications of Tree Sort                                       
-  ➢ Real-Life Applications Tree Sort                          
+---
 
-### ❖ Merge Sort                                  
-  ➢ Characteristics of Merge Sort
-  ➢ Applications of Merge Sort                                                                         
-  ➢ Real-Life Applications Merge Sort                                                                         
+## 🧠 Skills Gained
 
-### ❖ Quick Sort                                                                                 
-  ➢ Characteristics of Quick Sort                                                              
-  ➢ Applications of Quick Sort                                                                  
-  ➢ Real-Life Applications Quick Sort                                                                                       
+- Pointer mastery in C   
+- Memory Layput
+- Dynamic memory allocation using `malloc`/`calloc`/`realloc`/ `free`  
+- Recursive vs Iterative logic  
+- Stack and Queue operations  
+- Linked List (SLL, DLL) deep dive  
+- Binary Tree foundations 🌳
 
-### ❖ Topological Sort                                                       
-  ➢ Characteristics of Topological Sort                                                              
-  ➢ Applications of Topological Sort                                                                   
-  ➢ Real-Life Applications Topological Sort                                                                            
+---
+
+## 🛠️ Tools & Setup
+
+- Language: C  
+- IDE: Online C compiler  
+- Compiler: GCC / CodeBlocks  
+- Debugging via GDB and console output
+
+---
+
+## ✍️ Author
+
+**Gazi Taoshif**  
+B.Sc. in Computer Science & Engineering  
+🚀 Passionate about low-level memory logic and data structure efficiency  
+📍 Dhaka, Bangladesh  
+
+---
+
+## 🙌 Contribution
+
+This repo serves as a personal learning archive but suggestions, pull requests and improvements are more than welcome! 
+Feel free to fork, star ⭐ or raise an issue.
+
+---
+
+## From raw memory allocation to structured logic —  
+## **The real CSE core journey. One pointer at a time.**  
+# **TaoshifFlex**
+

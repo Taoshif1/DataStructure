@@ -9,7 +9,7 @@ struct Node {
 
 void insertAtBeginning(struct Node** head, int data) {
     struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
-    if (!new_node) {
+     if (!new_node) {
         printf("Memory allocation failed\n");
         return;
     }

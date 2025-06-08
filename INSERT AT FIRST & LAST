@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node *createList(int arr[], int size);
+void insertFirst(struct Node *head, int data);
+void printList(struct Node *head);
+void insertLast(struct Node *head, int data);
+
+struct Node{
+    int data;
+    struct Node *next;
+};
+
+int main(){
+
+    int a[]= {5, 10, 15, 20, 30};
+    struct Node *head = NULL;
+    head = createList(a, 6);
+
+    printList(head);
+
+    // Insert at First
+    insertFirst(head, 102);
+    insertLast(head, 102);
+
+return 0;
+}
+
+void insertLast(struct Node *head, int data){
+    struct Node *current = head;
+    // Traverse to the end of the list
+    while(current -> next != NULL){
+        current = current -> next;
+    }
+    // Create new node with data
+    struct Node *temp = (struct Node*)malloc(sizeof(struct Node));
+    temp -> data = data;
+    temp -> next = NULL;
+
+    // Insert
+    current -> next = temp;
+    printList(head);
+}
+
+void insertFirst(struct Node *head, int data){
+    struct Node *temp = (struct Node*)malloc(sizeof(struct Node));
+    temp -> data = data;
+    temp -> next = head;
+
+    struct Node *newHead = temp;
+    struct Node *current = newHead;
+    newHead = temp;
+
+    printList(newHead);
+    }
+
+void printList(struct Node *head){
+    struct Node *current = head;
+    while(current != NULL){
+        printf("%d -> ", current -> data);
+        current = current -> next;
+    }
+    printf("NULL\n");
+}
+
+struct Node *createList(int arr[], int size){
+    struct Node *head = NULL, *temp = NULL, *current = NULL;
+    int i;
+    for(i = 0; i < size; i++){
+        temp = (struct Node *)malloc(sizeof(struct Node));
+        temp -> data = arr[i];
+        temp -> next = NULL;
+        if(head == NULL){
+            head = temp;
+            current = temp;
+        }else{
+            current -> next = temp;
+            current = current -> next;
+        }
+    }
+    return head;
+};

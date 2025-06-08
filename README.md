@@ -1,5 +1,5 @@
 # Data Structure in C (CSE 207) 🧠💻
-[![Status: Learning Completed (for now!)](https://img.shields.io/badge/Status-Learning%20Completed%20(for%20now!)-brightgreen.svg?style=for-the-badge)](https://github.com/Taoshif1/LearningTS)
+[![Status: Learning Completed (for now!)](https://img.shields.io/badge/Status-Learning%20Completed%20-brightgreen.svg?style=for-the-badge)](https://github.com/Taoshif1/LearningTS)
 
 Welcome to the **DataStructure** repository — a full-fledged implementation and exploration of core **Data Structures in C**, following the syllabus of **CSE 207: Data Structures**. This repo covers everything from pointers to linked lists, stacks, queues and trees — not just to learn but to master memory-level control and logic building.
 

@@ -48,7 +48,7 @@ The repository is organized by topic for clarity and revision, reflecting the ha
 ## 🧠 Skills Gained
 
 - Pointer mastery in C   
-- Memory Layput
+- Memory Layout
 - Dynamic memory allocation using `malloc`/`calloc`/`realloc`/ `free`  
 - Recursive vs Iterative logic  
 - Stack and Queue operations  
@@ -70,8 +70,8 @@ The repository is organized by topic for clarity and revision, reflecting the ha
 
 **Gazi Taoshif**  
 B.Sc. in Computer Science & Engineering  
-🚀 Passionate about low-level memory logic and data structure efficiency  
 📍 Dhaka, Bangladesh  
+🚀 Passionate about low-level memory logic and data structure efficiency  
 
 ---
 

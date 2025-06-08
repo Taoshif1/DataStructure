@@ -1,0 +1,133 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+    struct Node* prev;
+};
+
+void insertAtBeginning(struct Node** head, int data) {
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
+    if (!new_node) {
+        printf("Memory allocation failed\n");
+        return;
+    }
+    new_node->data = data;
+    new_node->next = *head;
+    new_node->prev = NULL;
+    if (*head != NULL) {
+        (*head)->prev = new_node;
+    }
+    *head = new_node;
+}
+
+void insertAtEnd(struct Node** head, int data) {
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
+    if (!new_node) {
+        printf("Memory allocation failed\n");
+        return;
+    }
+    new_node->data = data;
+    new_node->next = NULL;
+    if (*head == NULL) {
+        new_node->prev = NULL;
+        *head = new_node;
+        return;
+    }
+    struct Node* last = *head;
+    while (last->next) {
+        last = last->next;
+    }
+    last->next = new_node;
+    new_node->prev = last;
+}
+
+void insertAfter(struct Node** head, int data, int position) {
+    if (position < 0) {
+        printf("Invalid position\n");
+        return;
+    }
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
+    if (!new_node) {
+        printf("Memory allocation failed\n");
+        return;
+    }
+    new_node->data = data;
+    struct Node* temp = *head;
+    for (int i = 0; temp != NULL && i < position; i++) {
+        temp = temp->next;
+    }
+    if (temp == NULL) {
+        printf("Position out of bounds\n");
+        free(new_node);
+        return;
+    }
+    new_node->next = temp->next;
+    new_node->prev = temp;
+    if (temp->next != NULL) {
+        temp->next->prev = new_node;
+    }
+    temp->next = new_node;
+}
+
+void printList(struct Node* head, const char* message) {
+    struct Node* temp = head;
+    printf("%s: ", message);
+    while (temp) {
+        printf("%d <-> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node* head = NULL;
+    int elements[] = {23, 48, 57, 4, 12};
+    int size = sizeof(elements) / sizeof(elements[0]);
+
+
+    for (int i = 0; i < size; i++) {
+        insertAtEnd(&head, elements[i]);
+    }
+
+    struct Node* head_first = NULL;
+    for (int i = 0; i < size; i++) {
+        insertAtEnd(&head_first, elements[i]);
+    }
+    insertAtBeginning(&head_first, 136);
+    printList(head_first, "Doubly Linked List after inserting at beginning");
+
+    struct Node* head_last = NULL;
+    for (int i = 0; i < size; i++) {
+        insertAtEnd(&head_last, elements[i]);
+    }
+    insertAtEnd(&head_last, 136);
+    printList(head_last, "Doubly Linked List after inserting at end");
+
+    struct Node* head_random = NULL;
+    for (int i = 0; i < size; i++) {
+        insertAtEnd(&head_random, elements[i]);
+    }
+    insertAfter(&head_random, 136, 1);
+    printList(head_random, "Doubly Linked List after inserting at random position");
+
+    struct Node* temp;
+    while(head_first != NULL){
+        temp = head_first;
+        head_first = head_first->next;
+        free(temp);
+    }
+    while(head_last != NULL){
+        temp = head_last;
+        head_last = head_last->next;
+        free(temp);
+    }
+    while(head_random != NULL){
+        temp = head_random;
+        head_random = head_random->next;
+        free(temp);
+    }
+
+    return 0;
+}
